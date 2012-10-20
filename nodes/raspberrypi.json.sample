@@ -1,0 +1,6 @@
+{ "run_list":
+    [
+      "recipe[apt_update]",
+      "recipe[nginx]"
+    ]
+}
