@@ -21,7 +21,6 @@ To begin cooking you must:
 ```
 gem install knife-solo
 knife configure -r . --defaults
-knife kitchen raspberrypi_cookbook
 knife prepare root@raspberrypi
 # configure the recipes you want to cook on your node, use raspberrypi.json.sample as a template if you wish
 knife cook root@raspberrypi
