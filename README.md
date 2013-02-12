@@ -21,10 +21,11 @@ To begin cooking you must:
 ```
 gem install knife-solo
 knife configure -r . --defaults
-knife prepare root@raspberrypi
+knife solo prepare root@raspberrypi.lan
 # configure the recipes you want to cook on your node, use raspberrypi.json.sample as a template if you wish
-knife cook root@raspberrypi
+knife solo cook root@raspberrypi
 ```
+
 Copyright
 ============
 
