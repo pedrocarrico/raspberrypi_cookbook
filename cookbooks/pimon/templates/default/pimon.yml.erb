@@ -1,0 +1,14 @@
+chart:
+  cpu:
+    color: '#D2691E'
+  disk:
+    color: '#CDC673'
+  mem:
+    color: '#87CEFA'
+  temp:
+    color: '#FF9B04'
+  swap:
+    color: '#3CB371'
+stats_collector:
+  number_of_stats: <%= node["pimon"]["number_of_stats"] %>
+  time_period_in_secs: <%= node["pimon"]["time_period_in_secs"] %>

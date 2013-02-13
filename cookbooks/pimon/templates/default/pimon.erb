@@ -1,0 +1,31 @@
+#!/bin/bash
+# Starts and stops pimon
+ 
+case "$1" in
+start)
+  pimon start -d -e production -i <%= node["pimon"]["listen_interface"] %> -p <%= node["pimon"]["port"] %> -c /usr/local/lib/pimon/pimon.yml
+;;
+ 
+stop)
+  pimon stop
+;;
+ 
+restart)
+  $0 stop
+  $0 start
+;;
+ 
+status)
+  PID=`cat /tmp/pimon.pid 2> /dev/null`
+  if ps -p $PID &> /dev/null
+  then 
+      echo 'Pimon is running...'
+  else
+      echo 'Pimon is not running...'
+  fi
+;;
+ 
+*)
+  echo "Usage: $0 {start|stop|restart|status}"
+  exit 1
+esac
