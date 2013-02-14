@@ -1,0 +1,17 @@
+ctrl_interface=/var/run/wpa_supplicant
+ctrl_interface_group=0
+update_config=1
+
+network={
+  ssid="<%= node["ralink-rt5370"]["ssid"] %>"
+  scan_ssid=1
+  mode=0
+  proto=WPA2
+  auth_alg=OPEN
+  pairwise=CCMP
+  group=CCMP
+  key_mgmt=WPA-PSK
+  psk="<%= node["ralink-rt5370"]["password"] %>"
+  id_str="<%= node["ralink-rt5370"]["id"] %>"
+  priority=1
+}
